@@ -1,0 +1,295 @@
+
+
+
+1. list :
+=========
+ls           - list all file/directories
+
+ls -l        - list all file/directories details alpabhatical order
+ 
+ls -lrt      - list all file/directories details from old timestamp to new timestamp
+
+ls -a        - list hidden files
+
+ls -R        - list all files inside folder
+
+
+
+2.new directory:
+================
+mkdir sandeep
+mkdir satish
+
+
+
+3.change directory:
+==================
+cd sandeep
+
+
+
+4.change to home directory:
+===========================
+cd ~
+
+
+
+5.one level Up directory:
+===========================
+cd ..
+
+
+
+6.present working directory:
+============================
+pwd
+
+
+
+7.create new file:
+==================
+touch file1
+or 
+
+cat > file2
+
+or 
+vi file3
+
+
+
+8.edit file:
+============
+vi file1
+
+i -insert  
+escape
+:wq - save file
+
+
+
+9. show contents:
+=================
+cat file1
+
+
+
+10. joining one or more files:
+=============================
+cat file1 file2 file3 >new_file
+
+
+
+11. rename files:
+================
+mv new_file Big_file
+
+
+
+12.Recently Used Commands:
+=========================
+history
+
+
+
+13.find files in directories:
+============================
+find -name personal.txt
+
+find -name dept.txt
+
+
+
+14.locate files in directories:
+============================
+locate personal.txt
+locate dept.txt
+
+
+
+15.see logged in users in Linux:
+================================
+w         ---- no.of users
+
+who am i  ----current user
+
+
+
+16. Read first 5 lines of large file:  
+=====================================
+head -5 personal.txt   --first 10 lines
+
+
+
+17.Read last 5 lines of large file:  
+====================================
+tail -5 personal.txt   --last 10 lines
+
+
+
+18.lines and bytes of file:  (wc -- word count)
+===========================
+wc personal.txt        --total no.of rows and bytes
+
+
+
+19.lines in file:  
+=================
+wc -l  file1   --total no.of rows
+
+
+
+20.bytes of file:  
+=================
+wc -c  file1   --total bytes
+
+
+21.copy :
+=========
+cp <source path> <distination path>
+
+
+
+22.copy all files in floder:
+============================
+cp -R sandeep satish
+
+
+
+23.copy files from  server to local system:
+==========================================
+scp -S 
+
+
+
+24.move :
+=========
+mv <source path> <distination path>
+
+
+
+25.remove file:
+===============
+rm file2
+
+
+
+26.remove directories:
+======================
+rm -R /home/coludera/satish
+
+or
+
+rm -rf /home/coludera/satish
+
+
+
+27.all permissions :
+====================
+chmod 777 /home/cloudera/Data/file2   ---read ,write and excute
+
+ 
+ 
+read only permissions:
+======================
+chmod 400 /home/cloudera/Data/file2   ---read only
+
+
+change ownership:
+=================
+chown 
+
+
+
+chage group of file:
+====================
+chgrp
+
+
+
+28.all running processes:
+======================
+ps -ef
+
+
+
+29.kill process:
+=============
+kill -9 <processid>
+
+
+
+30.search a word inside file:
+=============================
+
+grep <word> filename
+
+grep TCS personal.txt
+
+
+
+31.find,replace (or) substitution in file:
+==========================================
+sed - strem editor - maniplate data - used to find,replace (or) substitution 
+
+sed "s/SMITH/Sandeep/g" employee.txt
+
+
+32.mostly used for pattern scanning and processing:
+===================================================
+
+awk {print} personal.txt
+
+awk -F'|' '{print NF;exit}' emp.txt         ----count of columns in file:
+
+awk -F',' '{print NF;exit}' employee.txt    ----count of columns in file:
+
+
+
+33.count of columns in file:
+=========================
+
+head -1 emp.txt | tr '||' ' '| wc -w
+
+head -1 employee.txt |tr ',' ' '| wc -w
+
+
+
+34.disk:
+=============
+df -h            --check free space in gb current drive
+df -m            --check free space in mb current drive
+
+
+35.check no.of cpu in system:
+=============================
+cat /proc/cpuinfo
+
+
+36.hard link:
+=============
+1.copy of original file
+2.if original file deleted ,hard link contains data
+3.hard link share same inode number and file permissions as original file
+4.hard link can't cross file system
+5.commond : ln <originalfilename> <linkname>
+
+ln employee.txt emphard
+
+
+37.soft link :
+==============
+1.short to original file or link to original file
+2.if original file deleted ,soft link invalid
+3.soft link share different inode number and file permissions
+4.soft can cross file system
+5. commond : ln -s <originalfilename> <linkname>
+
+ln -s employee.txt empsoft
+
+
+37.check how long sever up:
+========================
+uptime
+
+
