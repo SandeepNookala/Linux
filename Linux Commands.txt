@@ -293,3 +293,7 @@ ln -s employee.txt empsoft
 uptime
 
 
+38.search files in hadoop:
+==========================
+
+hdfs dfs -ls -R / |grep filename
